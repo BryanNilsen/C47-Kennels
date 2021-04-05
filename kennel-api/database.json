@@ -14,6 +14,11 @@
             "id": 3,
             "name": "Esme",
             "breed": "Pitbull"
+        },
+        {
+            "id": 4,
+            "name": "Pippy",
+            "breed": "Yorkshire Terrier"
         }
     ],
     "customers": [
@@ -21,9 +26,35 @@
             "id": 1,
             "name": "Hannah Hall",
             "address": "7002 Chestnut Ct"
+        },
+        {
+            "id": 2,
+            "name": "Stan Dandeliver",
+            "address": "132 B Arcott Rd"
         }
     ],
-    "employees": [],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Emma Beaton",
+            "locationId": 1
+        },
+        {
+            "id": 2,
+            "name": "Charlie Doberman",
+            "locationId": 2
+        },
+        {
+            "id": 3,
+            "name": "Lily Padd",
+            "locationId": 1
+        },
+        {
+            "id": 4,
+            "name": "Marty McSwim",
+            "locationId": 2
+        }
+    ],
     "locations": [
         {
             "id": 1,

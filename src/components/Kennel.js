@@ -1,4 +1,5 @@
 import React from "react"
+import { PropsAndState } from "./PropsAndState"
 import { AnimalCard } from "./animal/AnimalCard"
 import "./Kennel.css"
 
@@ -11,6 +12,8 @@ export const Kennel = () => (
             <div>Visit Us at the Nashville North Location</div>
             <div>500 Puppy Way</div>
         </address>
+        <h2>Animals</h2>
+        <PropsAndState yourName="Brenda" />
         <h2>Animals</h2>
         <article className="animals">
             <AnimalCard />

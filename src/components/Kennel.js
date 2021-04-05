@@ -1,7 +1,10 @@
 import React from "react"
 import { PropsAndState } from "./PropsAndState"
 import { AnimalCard } from "./animal/AnimalCard"
+import { EmployeeCard } from "./employee/EmployeeCard"
 import "./Kennel.css"
+import { CustomerCard } from "./customer/CustomerCard"
+import { LocationCard } from "./location/LocationCard"
 
 export const Kennel = () => (
     <>
@@ -19,6 +22,29 @@ export const Kennel = () => (
             <AnimalCard />
             <AnimalCard />
             <AnimalCard />
+        </article>
+        <h2>Employees</h2>
+        <article className="employees">
+            <EmployeeCard />
+            <EmployeeCard />
+            <EmployeeCard />
+            <EmployeeCard />
+        </article>
+        <h2>Customers</h2>
+        <article className="customers">
+            <CustomerCard />
+            <CustomerCard />
+            <CustomerCard />
+            <CustomerCard />
+            <CustomerCard />
+            <CustomerCard />
+            <CustomerCard />
+        </article>
+        <h2>Locations</h2>
+        <article className="locations">
+            <LocationCard />
+            <LocationCard />
+            <LocationCard />
         </article>
     </>
 )

@@ -25,8 +25,12 @@ export const AnimalDetail = () => {
         console.log("useEffect", animalId)
         getAnimalById(animalId)
             .then(animal => {
-                setAnimal(animal);
-                setIsLoading(false)
+                if (animal) {
+                    setAnimal(animal);
+                    setIsLoading(false)
+                } else {
+                    history.push('/404')
+                }
             });
     }, [animalId]);
 

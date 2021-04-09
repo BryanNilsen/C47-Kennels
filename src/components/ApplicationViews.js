@@ -10,6 +10,7 @@ import { AnimalDetail } from "./animal/AnimalDetail"
 import { LocationDetail } from "./location/LocationDetail"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
+import { NotFound } from "./NotFound"
 
 export const ApplicationViews = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
@@ -24,6 +25,9 @@ export const ApplicationViews = () => {
             {/* Render the home view when http://localhost:3000/ */}
             <Route exact path="/">
                 <Home />
+            </Route>
+            <Route exact path="/404">
+                <NotFound />
             </Route>
 
             {/* Render the animal list when http://localhost:3000/animals */}
@@ -46,16 +50,25 @@ export const ApplicationViews = () => {
                 <AnimalDetail />
             </Route>
             <Route path="/employees">
-                <EmployeeList />
+                {isAuthenticated
+                    ? <EmployeeList />
+                    : <Redirect to="/login" />
+                }
             </Route>
             <Route exact path="/locations">
-                <LocationList />
+                {isAuthenticated
+                    ? <LocationList />
+                    : <Redirect to="/login" />
+                }
             </Route>
             <Route path="/locations/:locationId(\d+)">
                 <LocationDetail />
             </Route>
             <Route path="/customers">
-                <CustomerList />
+                {isAuthenticated
+                    ? <CustomerList />
+                    : <Redirect to="/login" />
+                }
             </Route>
         </>
     )

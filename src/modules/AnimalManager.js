@@ -7,16 +7,13 @@ export const getAnimalById = (animalId) => {
             if (res.ok) {
                 return res.json()
             } else if (res.status === 404) {
-                return Promise.reject('error 404')
+                const errorMsg = `${res.status}: ${res.statusText}`
+                return Promise.reject(errorMsg)
             } else {
-                return Promise.reject('some other error', res.status)
+                return Promise.reject('some other error just happened!!!!', res.status)
             }
         })
-        .then(data => {
-            console.log('data is', data)
-            return data
-        })
-        .catch(error => console.log('error is', error))
+        .catch(error => console.log('error', error))
 }
 
 export const getAllAnimals = () => {
